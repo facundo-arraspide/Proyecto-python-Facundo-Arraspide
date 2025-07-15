@@ -1,0 +1,22 @@
+
+{% extends 'core/base.html' %}
+{% block title %}Buscar Película{% endblock %}
+{% block content %}
+    <h2>Buscar Película</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if resultados %}
+        <h3>Resultados:</h3>
+        <ul>
+            {% for peli in resultados %}
+                <li>{{ peli.titulo }} ({{ peli.anio }})</li>
+            {% empty %}
+                <li>No se encontraron películas.</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

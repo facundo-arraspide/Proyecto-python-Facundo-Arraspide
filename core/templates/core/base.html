@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Mi Web de Películas{% endblock %}</title>
+</head>
+<body>
+    <h1>Mi Web de Películas</h1>
+    <nav>
+        <a href="/">Inicio</a> |
+        <a href="/insertar/pelicula/">Agregar Película</a> |
+        <a href="/insertar/director/">Agregar Director</a> |
+        <a href="/insertar/genero/">Agregar Género</a> |
+        <a href="/buscar/">Buscar Película</a>
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>
